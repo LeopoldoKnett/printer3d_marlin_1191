@@ -315,7 +315,7 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1 // LK: Também temos sensor de temperatura na mesa
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
@@ -608,7 +608,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40, 40, 400, 95.22 }
+// LK: Steper motor 1.8 Graus - Passo 1/32
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1424,7 +1425,8 @@
  * you must uncomment the following option or it won't work.
  *
  */
-//#define SDSUPPORT
+// LK: Temos suporte a cartão SD
+#define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
@@ -1432,7 +1434,7 @@
  * Enable one of the following items for a slower SPI transfer speed.
  * This may be required to resolve "volume init" errors.
  */
-//#define SPI_SPEED SPI_HALF_SPEED
+#define SPI_SPEED SPI_HALF_SPEED  // LK: É melhor lento doque dar erro
 //#define SPI_SPEED SPI_QUARTER_SPEED
 //#define SPI_SPEED SPI_EIGHTH_SPEED
 
@@ -1527,7 +1529,8 @@
 //
 // Note: Usually sold with a white PCB.
 //
-//#define REPRAP_DISCOUNT_SMART_CONTROLLER
+// LK: Este controlador permite a navegação nos menus do LCD
+#define REPRAP_DISCOUNT_SMART_CONTROLLER
 
 //
 // ULTIMAKER Controller.
